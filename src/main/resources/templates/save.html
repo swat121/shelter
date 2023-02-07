@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<form  method="post" th:action="@{/roomer/save}" th:object="${roomer}">
+    <input id="seconName" th:field="*{secondName}" placeholder="Кущовий"><br>
+    <input id="firstName" th:field="*{firstName}" placeholder="Денис"><br>
+    <input id="surname" th:field="*{surname}" placeholder="Ігорович"><br>
+    <input id="dateOfBirth" th:field="*{dateOfBirth}" placeholder="02.02.2001"><br>
+    <input id="numberOfPassport" th:field="*{numberOfPassport}" placeholder="000000000"><br>
+    <input id="passportIssuedBy" th:field="*{passportIssuedBy}" placeholder="1234"><br>
+    <input id="phoneNumber" th:field="*{phoneNumber}" placeholder="+380951420191"><br>
+    <input id="placeOfArrival" th:field="*{placeOfArrival}" placeholder="м. Дніпро"><br>
+    <input id="roomNumber" th:field="*{roomNumber}" placeholder="13"><br>
+    <button class="form-submit-button" type="submit">Save</button>
+    <button onclick="document.location='/city'" type="button" class="form-submit-button" >View cities</button>
+</form>
+</body>
+</html>

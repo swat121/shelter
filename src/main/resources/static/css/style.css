@@ -1,0 +1,60 @@
+input[type=text], select {
+    width: 20%;
+    padding: 12px 20px;
+    margin-top: 10%;
+    margin-bottom: 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+.form-submit-button {
+    background: #B9DFFF;
+    color: #3d3c3c;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+    height: 30px;
+    width: 10%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-submit-button:hover {
+    background: #016ABC;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+}
+.form-delete-button {
+    background: #B9DFFF;
+    color: #3d3c3c;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+    height: 30px;
+    width: 10%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-delete-button:hover {
+    background: rgba(248, 101, 101, 0.98);
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+}
+.format {
+    text-align: center;
+}
+.button-div {
+    margin-top: 5%;
+    text-align: center;
+}
