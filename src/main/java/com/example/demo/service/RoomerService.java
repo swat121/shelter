@@ -23,4 +23,7 @@ public class RoomerService {
     public List<Roomer> getListOfRoomers(){
         return roomerRepo.findAll();
     }
+    public Roomer getRoomerById(Long id) {
+        return roomerRepo.findRoomerById(id);
+    }
 }
