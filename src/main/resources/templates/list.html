@@ -13,7 +13,8 @@
 </div>
 <div class="format" th:each="roomers:${list}">
     <span th:text="${roomers.secondName}"></span>
-    <span th:text="${roomers.firstName}"></span>
+    <span th:text="${roomers.firstName}"> | </span>
+    <span th:text="${roomers.id}"></span>
 </div>
 
 </body>

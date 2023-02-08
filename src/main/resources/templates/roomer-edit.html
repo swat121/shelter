@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<form method="post" action="#" th:object="${roomer}" th:action="@{/roomer/update/{id}(id=${roomer.id})}" >
+<!--    <p id="id" th:field="*{id}"></p>-->
+    <input id="secondName" th:field="*{secondName}"><br>
+    <input id="firstName" th:field="*{firstName}"><br>
+    <input id="surname" th:field="*{surname}"><br>
+    <input id="dateOfBirth" th:field="*{dateOfBirth}"><br>
+    <input id="numberOfPassport" th:field="*{numberOfPassport}"><br>
+    <input id="passportIssuedBy" th:field="*{passportIssuedBy}"><br>
+    <input id="phoneNumber" th:field="*{phoneNumber}"><br>
+    <input id="placeOfArrival" th:field="*{placeOfArrival}"><br>
+    <input id="roomNumber" th:field="*{roomNumber}"><br>
+    <p id="settlementDate" th:text="${roomer.settlementDate}"></p>
+    <p id="moveOutDate" th:text="${roomer.moveOutDate}"></p>
+    <button class="form-submit-button" type="submit">Save</button>
+    <button onclick="document.location='/city'" type="button" class="form-submit-button" >View cities</button>
+</form>
+</body>
+</html>

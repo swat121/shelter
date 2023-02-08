@@ -37,4 +37,16 @@ public class RoomerController {
         model.addAttribute("roomer", roomerService.getRoomerById(id));
         return "roomer-info";
     }
+
+    @GetMapping("/roomer/{id}/update")
+    public String getRoomerForUpdate(@PathVariable(value = "id") Long id, Model model) {
+        model.addAttribute("roomer", roomerService.getRoomerById(id));
+        return "roomer-edit";
+    }
+    @PostMapping("/roomer/update/{id}")
+    public String updateRoomer(@ModelAttribute("updateRoomer") Roomer updateRoomer, @PathVariable(value = "id") Long id) {
+        updateRoomer.setId(id);
+        roomerService.editRoomer(updateRoomer);
+        return "redirect:/roomers";
+    }
 }
