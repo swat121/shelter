@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="button-div">
+    <a th:href="@{/}">
+        <button type="button" class="form-submit-button"><b>Add city</b></button>
+    </a>
+</div>
+<div class="format" th:each="roomers:${list}">
+    <span th:text="${roomers.secondName}"></span>
+    <span th:text="${roomers.firstName}"></span>
+</div>
+
+</body>
+</html>

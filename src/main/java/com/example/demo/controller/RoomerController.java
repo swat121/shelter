@@ -23,6 +23,11 @@ public class RoomerController {
     @PostMapping("/roomer/save")
     public String getDataOfRoomer(@ModelAttribute("roomer") Roomer roomer) {
         roomerService.saveRoomer(roomer);
-        return "redirect:/roomer/list";
+        return "redirect:/roomers";
+    }
+    @GetMapping("/roomers")
+    public String getListOfRoomers(Model model){
+        model.addAttribute("list", roomerService.getListOfRoomers());
+        return "list";
     }
 }
