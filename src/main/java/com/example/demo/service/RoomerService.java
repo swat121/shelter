@@ -24,7 +24,7 @@ public class RoomerService {
         return roomerRepo.findAll();
     }
     public Roomer getRoomerById(Long id) {
-        return roomerRepo.findRoomerById(id);
+        return roomerRepo.findById(id).orElse(null) ;
     }
     public void editRoomer(Roomer roomer) {
         this.roomerRepo.save(roomer);
