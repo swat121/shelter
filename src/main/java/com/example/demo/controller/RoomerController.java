@@ -24,8 +24,12 @@ public class RoomerController {
     }
 
     @PostMapping("/roomer/add")
-    public String getDataOfRoomer(@Valid @ModelAttribute("roomer") Roomer roomer, BindingResult result) {
+    public String getDataOfRoomer(@Valid @ModelAttribute("roomer") Roomer roomer, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            return "save";
+        }
+        if (!roomerService.isRoomFree(roomer)) {
+            model.addAttribute("message", "Ця кімната зайнята");
             return "save";
         }
         roomerService.saveRoomer(roomer);

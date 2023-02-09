@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Roomer;
+import com.example.demo.repo.RoomRepo;
 import com.example.demo.repo.RoomerRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.List;
 public class RoomerService {
 
     private final RoomerRepo roomerRepo;
+    private final RoomRepo roomRepo;
     private Date currentDate;
 
     public void saveRoomer(Roomer roomer) {
@@ -28,5 +30,10 @@ public class RoomerService {
     }
     public void editRoomer(Roomer roomer) {
         this.roomerRepo.save(roomer);
+    }
+    public boolean isRoomFree(Roomer roomer) {
+        int numberOfRoom = roomer.getRoomNumber();
+        int peopleInRoom = roomerRepo.findAllByRoomNumber(numberOfRoom).size();
+        return peopleInRoom < roomRepo.findRoomByNumber(numberOfRoom).getCapacity();
     }
 }
