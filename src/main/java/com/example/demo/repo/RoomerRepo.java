@@ -13,4 +13,6 @@ public interface RoomerRepo extends JpaRepository<Roomer, Long> {
     Roomer findRoomerById(Long id);
 
     List<Roomer> findAllByRoomNumber(int number);
+
+    List<Roomer> findAllBySecondName(String secondName);
 }

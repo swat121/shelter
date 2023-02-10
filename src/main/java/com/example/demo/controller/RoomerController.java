@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.model.Roomer;
 import com.example.demo.service.RoomerService;
 import jakarta.validation.Valid;
@@ -7,10 +8,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -38,7 +39,20 @@ public class RoomerController {
     @GetMapping("/roomers")
     public String getListOfRoomers(Model model){
         model.addAttribute("list", roomerService.getListOfRoomers());
+        model.addAttribute("roomers", new Roomer());
         return "list";
+    }
+
+    @PostMapping("/roomers")
+    public String findRoomer(@ModelAttribute("roomers") Roomer roomer, Model model, BindingResult bindingResult) {
+        List<Roomer> roomers = roomerService.getListOfRoomersBySecondName(roomer.getSecondName());
+        if (roomers.isEmpty()) {
+            bindingResult.addError(new FieldError("roomers","secondName","Такого мешканця не існує"));
+        } else {
+            model.addAttribute("list", roomers);
+        }
+        return "list";
+
     }
 
     @GetMapping("/roomer/{id}")

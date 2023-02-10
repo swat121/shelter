@@ -11,13 +11,38 @@
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
-<div class="format" th:each="roomers:${list}">
-    <a th:href="@{/roomer/{id}(id=${roomers.id})}" id="note">
-        <span th:text="${roomers.secondName}"></span>
-        <span th:text="${roomers.firstName}"></span>
-        <span th:text="${roomers.surname}"></span>
-        <span style="text-align: right" th:text="${roomers.roomNumber}"></span>
-    </a>
+<div th:insert="header :: header"></div>
+<div class="container">
+    <div class="containerSearch">
+        <div class="buttonSearch" >
+            <button form="searchForm" type="submit">Пошук</button>
+        </div>
+        <form  id="searchForm" method="post" action="#" th:action="@{/roomers}" th:object="${roomers}" >
+            <input class="inputSearch" id="secondName" th:field="*{secondName}" placeholder="Введіть прізвище"><br>
+            <p th:if="${#fields.hasErrors('secondName')}" th:errors="*{secondName}" style="color: red; border-radius: 5px;border: 1px solid red; padding: 5px; width: 35%"></p>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="containerForm">
+        <div class="leftButton">
+            <button type="submit">Лист мешканців</button>
+        </div>
+        <div class="containerHref">
+            <div th:each="roomers:${list}">
+                <a th:href="@{/roomer/{id}(id=${roomers.id})}" id="note">
+                    <span th:text="${roomers.secondName}"></span>
+                    <span th:text="${roomers.firstName}"></span>
+                    <span th:text="${roomers.surname}"></span> |
+                    <span th:text="'кім: ' + ${roomers.roomNumber}"></span>
+                </a>
+            </div>
+        </div>
+        <div class="rightButtons">
+            <button type="submit">Усі</button>
+            <button type="submit">Мешканці</button>
+        </div>
+    </div>
 </div>
 <div th:insert="footer :: footer"></div>
 <script src="https://use.fontawesome.com/4167c909a6.js"></script>
