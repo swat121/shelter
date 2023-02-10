@@ -6,6 +6,7 @@
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
+<div th:insert="header :: header"></div>
 <div class="format">
     <div class="container">
         <div class="containerForm">
@@ -80,9 +81,9 @@
 
             </form>
             <div class="rightButtons">
-                <button form="editForm" type="submit">Save</button>
-                <button type="submit">Save</button>
-                <button type="submit">Save</button>
+                <button form="editForm" type="submit">Зберегти</button>
+                <button type="submit">Додати нотатки</button>
+                <button type="submit">Завантажити фото</button>
             </div>
         </div>
 
