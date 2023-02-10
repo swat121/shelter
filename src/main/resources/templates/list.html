@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>City</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
-<div class="button-div">
-    <a th:href="@{/}">
-        <button type="button" class="form-submit-button"><b>Add city</b></button>
+<div class="format" th:each="roomers:${list}">
+    <a th:href="@{/roomer/{id}(id=${roomers.id})}" id="note">
+        <span th:text="${roomers.secondName}"></span>
+        <span th:text="${roomers.firstName}"></span>
+        <span th:text="${roomers.surname}"></span> |
+        <span th:text="${roomers.id}"></span>
     </a>
 </div>
-<div class="format" th:each="roomers:${list}">
-    <span th:text="${roomers.secondName}"></span>
-    <span th:text="${roomers.firstName}"> | </span>
-    <span th:text="${roomers.id}"></span>
-</div>
-
+<div th:insert="footer :: footer"></div>
+<script src="https://use.fontawesome.com/4167c909a6.js"></script>
 </body>
 </html>
