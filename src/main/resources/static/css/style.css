@@ -11,20 +11,51 @@ body{
     padding-right:15px;
     padding-left:15px;
     margin-right:auto;
-    marin-left:auto;
+    margin-left:auto;
 }
 .containerForm{
     display:flex;
     flex-direction: row;
     place-content:center space-between;
     align-items:center;
-    width:100%;
+}
+.span-format{
+    min-width: 150px;
+    display: inline-block;
+    text-align: right;
+    color: #1c1cc9;
+    font-weight: 700;
 }
 form{
     flex-direction: column;
     display: flex;
     place-content: center space-between;
     align-items: center;
+}
+.leftButton button{
+    padding: 10px;
+    font-size: 14px;
+    min-width: 170px;
+    border-radius: 15px;
+    border-color: purple;
+    cursor:pointer;
+}
+.rightButtons button{
+    width: 170px;
+    color: white;
+    background-color: #326eab;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 14px;
+    border: none;
+    cursor:pointer;
+}
+.rightButtons{
+    flex-direction: column;
+    display: flex;
+    place-content: center space-between;
+    align-items:center;
 }
 .footer{
     margin-top: 7%;
@@ -33,6 +64,10 @@ form{
     padding:4px 0px;
     font-family: 'Play', sans-serif;
     text-align:center;
+}
+.footerButtons{
+    display:flex;
+    flex-direction: row;
 }
 
 .footer .row{
@@ -106,6 +141,7 @@ form{
     margin: 14px 2px;
     border-radius: 9px;
     border: none;
+    outline:none;
 }
 
 input[type=text], select {
@@ -119,17 +155,7 @@ input[type=text], select {
     box-sizing: border-box;
 
 }
-.form-submit-button {
-    background: #B9DFFF;
-    color: #3d3c3c;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    box-shadow: 5px 5px 5px #eee;
-    text-shadow: none;
-    height: 30px;
-    width: 10%;
-    font-family: 'Montserrat', sans-serif;
-}
+
 
 .form-submit-button:hover {
     background: #016ABC;
