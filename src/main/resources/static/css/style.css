@@ -70,6 +70,12 @@ body{
     margin-right:120px;
     margin-left:120px;
 }
+.editForm{
+    display:flex;
+    flex-direction: row;
+    place-content:center space-between;
+    align-items:flex-start;
+}
 .span-format{
     min-width: 150px;
     display: inline-block;
@@ -297,4 +303,29 @@ body{
 .button-div {
     margin-top: 5%;
     text-align: center;
+}
+.img_wrap{
+    width: 357px;
+    height: 326px;
+    overflow: hidden;
+    text-align-last: center;
+}
+.img_wrap img{
+    width: 300px;
+    height: 400px;
+    margin: 71px 0 0 -33px;
+}
+
+.photo-note{
+    background-color: #d9d9d9;
+    border: none;
+    /* width: 400px; */
+    color: #1d3b55;
+    padding: 7px 19px 7px 19px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 18px 2px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
 }

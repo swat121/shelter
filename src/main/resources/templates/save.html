@@ -15,7 +15,7 @@
             <div class="leftButton">
                 <button type="submit">Поселити</button>
             </div>
-            <form id="editForm" method="post" th:action="@{/roomer/add}" th:object="${roomer}">
+            <form id="saveForm" method="post" th:action="@{/roomer/add}" th:object="${roomer}">
                 <div class="form-group">
                     <span class="span-format">Прізвище</span>
                     <input class="form-control" id="secondName" th:field="*{secondName}"
@@ -81,7 +81,7 @@
 
             </form>
             <div class="rightButtons">
-                <button form="editForm" type="submit">Зберегти</button>
+                <button form="saveForm" type="submit">Зберегти</button>
                 <button type="submit">Додати нотатки</button>
                 <button type="submit">Завантажити фото</button>
             </div>

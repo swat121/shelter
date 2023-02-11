@@ -36,6 +36,9 @@ public class RoomerService {
         int peopleInRoom = roomerRepo.findAllByRoomNumber(numberOfRoom).size();
         return peopleInRoom < roomRepo.findRoomByNumber(numberOfRoom).getCapacity();
     }
+    public boolean isRoomExist(Roomer roomer) {
+        return roomRepo.findRoomByNumber(roomer.getRoomNumber()) != null;
+    }
     public List<Roomer> getListOfRoomersBySecondName(String secondName) {
         return roomerRepo.findAllBySecondName(secondName);
     }
