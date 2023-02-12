@@ -31,7 +31,7 @@ public class RoomerController {
         }
         if (!roomerService.isRoomExist(roomer)) {
             model.addAttribute("message", "Такої кімнати не існує");
-            return "roomer-edit";
+            return "save";
         }
         if (!roomerService.isRoomFree(roomer)) {
             model.addAttribute("message", "Ця кімната зайнята");
@@ -83,7 +83,7 @@ public class RoomerController {
     @PostMapping("/roomers/{id}/edit")
     public String updateRoomer(@Valid @ModelAttribute("updateRoomer") Roomer updateRoomer, @PathVariable(value = "id") Long id, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "roomer-info";
+            return "roomer-edit";
         }
         Roomer roomer = roomerService.getRoomerById(id);
         if (!roomerService.isRoomExist(updateRoomer)) {
