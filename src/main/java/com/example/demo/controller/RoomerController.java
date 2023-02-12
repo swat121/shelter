@@ -85,15 +85,17 @@ public class RoomerController {
         if (result.hasErrors()) {
             return "roomer-info";
         }
+        Roomer roomer = roomerService.getRoomerById(id);
         if (!roomerService.isRoomExist(updateRoomer)) {
-            model.addAttribute("message", "Такої кімнати не існує");
+            model.addAttribute("roomer", roomer);
+            model.addAttribute("errorNumber", "Такої кімнати не існує");
             return "roomer-edit";
         }
         if (!roomerService.isRoomFree(updateRoomer)) {
-            model.addAttribute("message", "Ця кімната зайнята");
+            model.addAttribute("roomer", roomer);
+            model.addAttribute("errorNumber", "Ця кімната зайнята");
             return "roomer-edit";
         }
-        Roomer roomer = roomerService.getRoomerById(id);
         updateRoomer.setSettlementDate(roomer.getSettlementDate());
         updateRoomer.setMoveOutDate(roomer.getMoveOutDate());
         updateRoomer.setId(id);

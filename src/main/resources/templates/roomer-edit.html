@@ -16,7 +16,8 @@
             <button form="editForm" type="submit">Зберегти</button>
         </div>
         <div th:unless="${message != null}">
-            <form id="editForm" method="post" action="#" th:object="${roomer}" th:action="@{/roomer/update/{id}(id=${roomer.id})}">
+            <form id="editForm" method="post" action="#" th:object="${roomer}"
+                  th:action="@{/roomer/update/{id}(id=${roomer.id})}">
                 <div class="form-group">
                     <span class="span-format">Прізвище</span>
                     <input class="form-control" id="secondName" th:field="*{secondName}"
@@ -68,15 +69,15 @@
                     <input class="form-control" id="placeOfArrival" th:field="*{placeOfArrival}"
                            placeholder="м. Дніпро"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}"
-                         th:errors="*{phoneNumber}"></div>
+                         th:errors="*{placeOfArrival}"></div>
                 </div>
                 <div class="form-group">
                     <span class="span-format">Номер кімнати</span>
                     <input class="form-control" type="number" id="roomNumber" th:field="*{roomNumber}" placeholder="13"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('roomNumber')}"
                          th:errors="*{roomNumber}"></div>
-                    <div th:if="${message != null}">
-                        <p th:text="${message}"></p>
+                    <div th:if="${errorNumber != null}">
+                        <p th:text="${errorNumber}"></p>
                     </div>
                 </div>
             </form>
@@ -93,14 +94,16 @@
                 </div>
             </form>
         </div>
-        <div th:object="${roomer}">
-            <div  class="img_wrap">
-                <img alt="This is photo" th:src="@{/img/denis.jpg}">
-            </div>
-            <div class="photo-note">
-                <span th:text="${roomer.secondName}"></span>
-                <span th:text="${roomer.firstName}"></span>
-                <span th:text="${roomer.surname}"></span>
+        <div th:unless="${message != null}">
+            <div th:object="${roomer}">
+                <div class="img_wrap">
+                    <img alt="This is photo" th:src="@{/img/denis.jpg}">
+                </div>
+                <div class="photo-note">
+                    <span th:text="${roomer.secondName}"></span>
+                    <span th:text="${roomer.firstName}"></span>
+                    <span th:text="${roomer.surname}"></span>
+                </div>
             </div>
         </div>
     </div>

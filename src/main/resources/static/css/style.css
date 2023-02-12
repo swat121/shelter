@@ -90,6 +90,12 @@ body{
     place-content: center space-between;
     align-items: center;
 }
+#showForm{
+    flex-direction: column;
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+}
 /*#searchForm{*/
 /*    flex-direction: row;*/
 /*    display: flex;*/
@@ -145,6 +151,32 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
+}
+.leftButtonsAccept button{
+    width: 170px;
+    color: white;
+    background-color: #0b4269;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 14px;
+    border-width: 2px;
+    cursor: pointer;
+    border-color: #1D3B55;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    transition: 0.4s ease-in-out;
+}
+.leftButtonsAccept{
+    flex-direction: column;
+    display: flex;
+    place-content: center space-between;
+    align-items:center;
+}
+.leftButtonsAccept button:hover{
+    box-shadow: inset 0 -60px 0 #d9d9d9, 1px 2px 4px rgb(29, 59, 85);
+    color: #606a76;
 }
 .rightButtons button:hover{
     box-shadow: inset 0 -60px 0 #d9d9d9, 1px 2px 4px rgb(29, 59, 85);

@@ -6,23 +6,65 @@
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
+<div th:insert="header :: header"></div>
 <div th:if="${message != null}">
     <p th:text="${message}"></p>
 </div>
-<form th:each="roomer:${roomer}">
-    <p id="secondName" th:text="${roomer.secondName}"><br>
-    <p id="firstName" th:text="${roomer.firstName}"><br>
-    <p id="surname" th:text="${roomer.surname}"><br>
-    <p id="dateOfBirth" th:text="${roomer.dateOfBirth}"><br>
-    <p id="numberOfPassport" th:text="${roomer.numberOfPassport}"><br>
-    <p id="passportIssuedBy" th:text="${roomer.passportIssuedBy}"><br>
-    <p id="phoneNumber" th:text="${roomer.phoneNumber}"><br>
-    <p id="placeOfArrival" th:text="${roomer.placeOfArrival}"><br>
-    <p id="roomNumber" th:text="${roomer.roomNumber}"><br>
-    <p id="settlementDate" th:text="${roomer.settlementDate}"></p>
-    <p id="moveOutDate" th:text="${roomer.moveOutDate}"></p>
-    <button class="form-submit-button" type="submit">Save</button>
-    <button onclick="document.location='/city'" type="button" class="form-submit-button">View cities</button>
-</form>
+<div class="container">
+    <div class="editForm">
+        <div class="leftButtonsAccept">
+            <a th:href="@{'./' +  ${roomer.id} + '/edit'}"><button type="button">Редагувати</button></a>
+            <button type="submit">Виселити</button>
+        </div>
+        <form id=showForm th:each="roomer:${roomer}">
+            <div class="form-group">
+                <span class="span-format">Дата народження</span>
+                <p class="form-control" id="dateOfBirth" th:text="${roomer.dateOfBirth}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Номер паспорта</span>
+                <p class="form-control" id="numberOfPassport" th:text="${roomer.numberOfPassport}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Ким виданий</span>
+                <p class="form-control" id="passportIssuedBy" th:text="${roomer.passportIssuedBy}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Номер телефону</span>
+                <p class="form-control" id="phoneNumber" th:text="${roomer.phoneNumber}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Звідки приїхали</span>
+                <p class="form-control" id="placeOfArrival" th:text="${roomer.placeOfArrival}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Номер кімнати</span>
+                <p class="form-control" id="roomNumber" th:text="${roomer.roomNumber}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Дата поселення</span>
+                <p class="form-control" id="settlementDate" th:text="${roomer.settlementDate}"></p>
+            </div>
+            <div class="form-group">
+                <div th:if="${roomer.moveOutDate != null}">
+                    <span class="span-format">Дата виселення</span>
+                    <p class="form-control" id="moveOutDate" th:text="${roomer.moveOutDate}"></p>
+                </div>
+            </div>
+        </form>
+        <div th:object="${roomer}">
+            <div class="img_wrap">
+                <img alt="This is photo" th:src="@{/img/denis.jpg}">
+            </div>
+            <div class="photo-note">
+                <span th:text="${roomer.secondName}"></span>
+                <span th:text="${roomer.firstName}"></span>
+                <span th:text="${roomer.surname}"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="footer :: footer"></div>
+<script src="https://use.fontawesome.com/4167c909a6.js"></script>
 </body>
 </html>
