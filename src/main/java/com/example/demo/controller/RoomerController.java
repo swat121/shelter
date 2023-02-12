@@ -80,7 +80,7 @@ public class RoomerController {
         }
         return "roomer-edit";
     }
-    @PostMapping("/roomers/update/{id}")
+    @PostMapping("/roomers/{id}/edit")
     public String updateRoomer(@Valid @ModelAttribute("updateRoomer") Roomer updateRoomer, @PathVariable(value = "id") Long id, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "roomer-info";

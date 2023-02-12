@@ -15,7 +15,7 @@
             <div class="leftButton">
                 <button type="submit">Поселити</button>
             </div>
-            <form id="saveForm" method="post" th:action="@{/roomer/add}" th:object="${roomer}">
+            <form id="saveForm" method="post" th:action="@{/roomers/add}" th:object="${roomer}">
                 <div class="form-group">
                     <span class="span-format">Прізвище</span>
                     <input class="form-control" id="secondName" th:field="*{secondName}"

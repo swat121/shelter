@@ -17,7 +17,7 @@
         </div>
         <div th:unless="${message != null}">
             <form id="editForm" method="post" action="#" th:object="${roomer}"
-                  th:action="@{/roomer/update/{id}(id=${roomer.id})}">
+                  th:action="@{'./edit'}">
                 <div class="form-group">
                     <span class="span-format">Прізвище</span>
                     <input class="form-control" id="secondName" th:field="*{secondName}"
