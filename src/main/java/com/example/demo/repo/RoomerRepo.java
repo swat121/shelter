@@ -12,6 +12,9 @@ public interface RoomerRepo extends JpaRepository<Roomer, Long> {
     @Query(value="SELECT * FROM roomer WHERE id =?1", nativeQuery = true)
     Roomer findRoomerById(Long id);
 
+    @Query(value = "select * from roomer where move_out_date is null", nativeQuery = true)
+    List<Roomer> findAllLiving();
+
     List<Roomer> findAllByRoomNumber(int number);
 
     List<Roomer> findAllBySecondName(String secondName);

@@ -22,7 +22,7 @@ public class RoomerService {
         roomer.setSettlementDate(currentDate);
         roomerRepo.save(roomer);
     }
-    public List<Roomer> getListOfRoomers(){
+    public List<Roomer> getAllRoomers(){
         return roomerRepo.findAll();
     }
     public Roomer getRoomerById(Long id) {
@@ -51,5 +51,9 @@ public class RoomerService {
         roomer.setMoveOutDate(currentDate);
         System.out.println("============================================= 4");
         roomerRepo.save(roomer);
+    }
+
+    public List<Roomer> getThisRoomers() {
+        return roomerRepo.findAllLiving();
     }
 }

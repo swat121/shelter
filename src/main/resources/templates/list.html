@@ -14,12 +14,13 @@
 <div th:insert="header :: header"></div>
 <div class="container">
     <div class="containerSearch">
-        <div class="buttonSearch" >
+        <div class="buttonSearch">
             <button form="searchForm" type="submit">Пошук</button>
         </div>
-        <form  id="searchForm" method="post" action="#" th:action="@{/roomers}" th:object="${roomers}" >
+        <form id="searchForm" method="post" action="#" th:action="@{/roomers}" th:object="${roomers}">
             <input class="inputSearch" id="secondName" th:field="*{secondName}" placeholder="Введіть прізвище"><br>
-            <p th:if="${#fields.hasErrors('secondName')}" th:errors="*{secondName}" style="color: red; border-radius: 5px;border: 1px solid red; padding: 5px; width: 35%"></p>
+            <p th:if="${#fields.hasErrors('secondName')}" th:errors="*{secondName}"
+               style="color: red; border-radius: 5px;border: 1px solid red; padding: 5px; width: 35%"></p>
         </form>
     </div>
 </div>
@@ -38,13 +39,59 @@
                 </a>
             </div>
         </div>
-        <div class="rightButtons">
-            <button type="submit">Усі</button>
-            <button type="submit">Мешканці</button>
+        <div>
+            <div>
+                <span class="size-note" >Кіль. мешканців: </span>
+                <span class="size" th:text="${size}"></span>
+            </div>
+            <div id="divAll" class="rightButtons">
+                <a id="aAll" th:href="@{'roomers?sort=all'}"><button id="btnAll" type="submit">Усі</button></a>
+            </div>
+            <div id="divThis" class="rightButtons">
+                <a id="aThis" th:href="@{'roomers?sort=this'}"><button id="btnThis" type="submit">Мешканці</button></a>
+            </div>
         </div>
     </div>
 </div>
+<!--<script th:inline="javascript">-->
+<!--    let btnThis = document.getElementById("btnThis");-->
+<!--    let btnAll = document.getElementById("btnAll");-->
+<!--    let divAll = document.getElementById("divAll");-->
+<!--    let divThis = document.getElementById("divThis");-->
+<!--    let aAll = document.getElementById("aAll");-->
+<!--    let aThis = document.getElementById("aThis");-->
+
+<!--    let isBtnALL = false;-->
+<!--    let isBtnThis = true;-->
+
+<!--    divThis.classList.remove("rightButtons");-->
+<!--    divThis.classList.add("active");-->
+<!--    divAll.classList.remove("active");-->
+<!--    divAll.classList.add("rightButtons");-->
+
+
+<!--    aAll.addEventListener("click", function () {-->
+<!--        alert("dadsa");-->
+<!--        isBtnALL = true;-->
+<!--        isBtnThis = false;-->
+
+<!--        divAll.classList.remove("rightButtons");-->
+<!--        divAll.classList.add("active");-->
+<!--        divThis.classList.remove("active");-->
+<!--        divThis.classList.add("rightButtons");-->
+<!--    });-->
+<!--    aThis.addEventListener("click", function () {-->
+<!--        alert("dadsa");-->
+<!--        isBtnThis = true;-->
+<!--        isBtnALL = false;-->
+
+<!--        divAll.classList.remove("active");-->
+<!--        divAll.classList.add("rightButtons");-->
+<!--        divThis.classList.remove("rightButtons");-->
+<!--        divThis.classList.add("active");-->
+<!--    });-->
+<!--</script>-->
 <div th:insert="footer :: footer"></div>
-<script src="https://use.fontawesome.com/4167c909a6.js"></script>
+<!--<script src="https://use.fontawesome.com/4167c909a6.js"></script>-->
 </body>
 </html>

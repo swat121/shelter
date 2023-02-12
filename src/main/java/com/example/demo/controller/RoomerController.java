@@ -41,9 +41,10 @@ public class RoomerController {
         return "redirect:/roomers";
     }
     @GetMapping("/roomers")
-    public String getListOfRoomers(Model model){
-        model.addAttribute("list", roomerService.getListOfRoomers());
+    public String getListOfRoomers(@RequestParam(value = "sort", required = false, defaultValue = "this") String sort, Model model){
+        model.addAttribute("list", sort.equals("this") ? roomerService.getThisRoomers() : roomerService.getAllRoomers());
         model.addAttribute("roomers", new Roomer());
+        model.addAttribute("size", sort.equals("this") ? roomerService.getThisRoomers().size() : roomerService.getAllRoomers().size());
         return "list";
     }
 
