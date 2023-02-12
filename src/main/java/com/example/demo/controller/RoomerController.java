@@ -102,4 +102,9 @@ public class RoomerController {
         roomerService.editRoomer(updateRoomer);
         return "redirect:/roomers";
     }
+    @GetMapping("/roomers/{id}/evict")
+    public String evictRoomer(@PathVariable Long id) {
+        roomerService.evictRoomer(id);
+        return "redirect:/roomers";
+    }
 }

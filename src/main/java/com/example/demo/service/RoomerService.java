@@ -42,4 +42,14 @@ public class RoomerService {
     public List<Roomer> getListOfRoomersBySecondName(String secondName) {
         return roomerRepo.findAllBySecondName(secondName);
     }
+    public void evictRoomer(Long id) {
+        System.out.println("=============================================111111111111111111111");
+        currentDate = new Date();
+        System.out.println("============================================= 2");
+        Roomer roomer = roomerRepo.findRoomerById(id);
+        System.out.println("============================================= 3");
+        roomer.setMoveOutDate(currentDate);
+        System.out.println("============================================= 4");
+        roomerRepo.save(roomer);
+    }
 }

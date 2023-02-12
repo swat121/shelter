@@ -14,7 +14,7 @@
     <div class="editForm">
         <div class="leftButtonsAccept">
             <a th:href="@{'./' +  ${roomer.id} + '/edit'}"><button type="button">Редагувати</button></a>
-            <button type="submit">Виселити</button>
+            <a th:href="@{'./' +  ${roomer.id} + '/evict'}"><button type="button">Виселити</button></a>
         </div>
         <form id=showForm th:each="roomer:${roomer}">
             <div class="form-group">
