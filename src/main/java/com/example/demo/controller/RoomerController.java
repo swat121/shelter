@@ -53,8 +53,10 @@ public class RoomerController {
         List<Roomer> roomers = roomerService.getListOfRoomersBySecondName(roomer.getSecondName());
         if (roomers.isEmpty()) {
             bindingResult.addError(new FieldError("roomers","secondName","Такого мешканця не існує"));
+            model.addAttribute("size", 0);
         } else {
             model.addAttribute("list", roomers);
+            model.addAttribute("size", roomers.size());
         }
         return "list";
 
