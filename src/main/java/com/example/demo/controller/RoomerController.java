@@ -18,13 +18,13 @@ import java.util.List;
 public class RoomerController {
     private final RoomerService roomerService;
 
-    @GetMapping("/roomer/add")
+    @GetMapping("/roomers/add")
     public String saveRoomer(Model model){
         model.addAttribute("roomer", new Roomer());
         return "save";
     }
 
-    @PostMapping("/roomer/add")
+    @PostMapping("/roomers/add")
     public String getDataOfRoomer(@Valid @ModelAttribute("roomer") Roomer roomer, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "save";
@@ -59,7 +59,7 @@ public class RoomerController {
 
     }
 
-    @GetMapping("/roomer/{id}")
+    @GetMapping("/roomers/{id}")
     public String getRoomer(@PathVariable(value = "id") Long id, Model model) {
         Roomer roomer = roomerService.getRoomerById(id);
         if (roomer == null) {
@@ -70,7 +70,7 @@ public class RoomerController {
         return "roomer-info";
     }
 
-    @GetMapping("/roomer/{id}/edit")
+    @GetMapping("/roomers/{id}/edit")
     public String getRoomerForUpdate(@PathVariable(value = "id") Long id, Model model) {
         Roomer roomer = roomerService.getRoomerById(id);
         if (roomer == null) {
@@ -80,7 +80,7 @@ public class RoomerController {
         }
         return "roomer-edit";
     }
-    @PostMapping("/roomer/update/{id}")
+    @PostMapping("/roomers/update/{id}")
     public String updateRoomer(@Valid @ModelAttribute("updateRoomer") Roomer updateRoomer, @PathVariable(value = "id") Long id, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "roomer-info";
