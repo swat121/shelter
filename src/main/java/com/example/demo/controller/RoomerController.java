@@ -91,7 +91,7 @@ public class RoomerController {
             model.addAttribute("errorNumber", "Такої кімнати не існує");
             return "roomer-edit";
         }
-        if (!roomerService.isRoomFree(updateRoomer)) {
+        if (!roomer.getRoomNumber().equals(updateRoomer.getRoomNumber()) && !roomerService.isRoomFree(updateRoomer)) {
             model.addAttribute("roomer", roomer);
             model.addAttribute("errorNumber", "Ця кімната зайнята");
             return "roomer-edit";
