@@ -26,8 +26,8 @@
 </div>
 <div class="container">
     <div class="containerForm">
-        <div class="leftButton">
-            <button type="submit">Лист мешканців</button>
+        <div class="rightButtons">
+            <a th:href="@{'roomers/add'}"><button type="submit">Додати</button></a>
         </div>
         <div class="containerHref">
             <div th:each="roomers:${list}">
@@ -45,52 +45,32 @@
                 <span class="size" th:text="${size}"></span>
             </div>
             <div id="divAll" class="rightButtons">
-                <a id="aAll" th:href="@{'roomers?sort=all'}"><button id="btnAll" type="submit">Усі</button></a>
+                <a id="aAll" th:href="@{'/roomers?sort=all'}" ><button id="btnAll" type="button">Усі</button></a>
             </div>
-            <div id="divThis" class="rightButtons">
-                <a id="aThis" th:href="@{'roomers?sort=this'}"><button id="btnThis" type="submit">Мешканці</button></a>
+            <div id="divThis" class="active">
+                <a id="aThis" th:href="@{'/roomers?sort=this'}"><button id="btnThis" type="button">Мешканці</button></a>
             </div>
         </div>
     </div>
 </div>
-<!--<script th:inline="javascript">-->
-<!--    let btnThis = document.getElementById("btnThis");-->
-<!--    let btnAll = document.getElementById("btnAll");-->
-<!--    let divAll = document.getElementById("divAll");-->
-<!--    let divThis = document.getElementById("divThis");-->
-<!--    let aAll = document.getElementById("aAll");-->
-<!--    let aThis = document.getElementById("aThis");-->
-
-<!--    let isBtnALL = false;-->
-<!--    let isBtnThis = true;-->
-
-<!--    divThis.classList.remove("rightButtons");-->
-<!--    divThis.classList.add("active");-->
-<!--    divAll.classList.remove("active");-->
-<!--    divAll.classList.add("rightButtons");-->
-
-
-<!--    aAll.addEventListener("click", function () {-->
-<!--        alert("dadsa");-->
-<!--        isBtnALL = true;-->
-<!--        isBtnThis = false;-->
-
-<!--        divAll.classList.remove("rightButtons");-->
-<!--        divAll.classList.add("active");-->
-<!--        divThis.classList.remove("active");-->
-<!--        divThis.classList.add("rightButtons");-->
-<!--    });-->
-<!--    aThis.addEventListener("click", function () {-->
-<!--        alert("dadsa");-->
-<!--        isBtnThis = true;-->
-<!--        isBtnALL = false;-->
-
-<!--        divAll.classList.remove("active");-->
-<!--        divAll.classList.add("rightButtons");-->
-<!--        divThis.classList.remove("rightButtons");-->
-<!--        divThis.classList.add("active");-->
-<!--    });-->
-<!--</script>-->
+<script th:inline="javascript">
+    let divThis = document.getElementById("divThis");
+    let divAll = document.getElementById("divAll");
+    if (window.location.href.includes("this")) {
+        console.log("this");
+        divThis.classList.remove("rightButtons");
+        divThis.classList.add("active");
+        divAll.classList.remove("active");
+        divAll.classList.add("rightButtons");
+    }
+    if (window.location.href.includes("all")) {
+        console.log("all");
+        divAll.classList.remove("rightButtons");
+        divAll.classList.add("active");
+        divThis.classList.remove("active");
+        divThis.classList.add("rightButtons");
+    }
+</script>
 <div th:insert="footer :: footer"></div>
 <!--<script src="https://use.fontawesome.com/4167c909a6.js"></script>-->
 </body>

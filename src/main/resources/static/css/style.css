@@ -63,12 +63,14 @@ body{
     place-content:center space-between;
     align-items:center;
 }
-.containerLogo{
-    display:flex;
-    place-content:center space-between;
-    align-items:center;
-    margin-right:120px;
-    margin-left:120px;
+.containerLogo {
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+    margin-right: 120px;
+    margin-left: 120px;
+    margin-top: 1%;
+    margin-bottom: 2%;
 }
 .editForm{
     display:flex;
@@ -139,6 +141,7 @@ body{
     display: flex;
     place-content: center space-between;
     align-items:center;
+    pointer-events: none;
 }
 .inputSearch{
     background-color: #ffffff;
