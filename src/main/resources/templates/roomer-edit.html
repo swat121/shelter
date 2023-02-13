@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<div th:if="${message != null}">
+    <p th:text="${message}"></p>
+</div>
+<div class="container">
+    <div class="editForm">
+        <div class="rightButtons">
+            <button form="editForm" type="submit">Зберегти</button>
+        </div>
+        <div th:unless="${message != null}">
+            <form id="editForm" method="post" action="#" th:object="${roomer}"
+                  th:action="@{'./edit'}">
+                <div class="form-group">
+                    <span class="span-format">Прізвище</span>
+                    <input class="form-control" id="secondName" th:field="*{secondName}"
+                           placeholder="Кущовий"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('secondName')}"
+                         th:errors="*{secondName}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Ім'я</span>
+                    <input class="form-control" id="firstName" th:field="*{firstName}" placeholder="Денис"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('firstName')}"
+                         th:errors="*{firstName}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Побатькові      </span>
+                    <input class="form-control" id="surname" th:field="*{surname}" placeholder="Ігорович"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('surname')}"
+                         th:errors="*{surname}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Дата народження </span>
+                    <input class="form-control" id="dateOfBirth" th:field="*{dateOfBirth}" placeholder="02.02.2001"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('dateOfBirth')}"
+                         th:errors="*{dateOfBirth}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Номер паспорта  </span>
+                    <input class="form-control" type="number" id="numberOfPassport" th:field="*{numberOfPassport}"
+                           placeholder="000000000"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('numberOfPassport')}"
+                         th:errors="*{numberOfPassport}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Ким видан       </span>
+                    <input class="form-control" type="number" id="passportIssuedBy" th:field="*{passportIssuedBy}"
+                           placeholder="1234"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('passportIssuedBy')}"
+                         th:errors="*{passportIssuedBy}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Номер телефона  </span>
+                    <input class="form-control" type="number" id="phoneNumber" th:field="*{phoneNumber}"
+                           placeholder="+380951420191"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}"
+                         th:errors="*{phoneNumber}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Звідки приїхали</span>
+                    <input class="form-control" id="placeOfArrival" th:field="*{placeOfArrival}"
+                           placeholder="м. Дніпро"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}"
+                         th:errors="*{placeOfArrival}"></div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Номер кімнати</span>
+                    <input class="form-control" type="number" id="roomNumber" th:field="*{roomNumber}" placeholder="13"><br>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('roomNumber')}"
+                         th:errors="*{roomNumber}"></div>
+                    <div th:if="${errorNumber != null}">
+                        <p th:text="${errorNumber}"></p>
+                    </div>
+                </div>
+            </form>
+            <form th:object="${roomer}">
+                <div class="form-group">
+                    <span class="span-format">Дата поселення</span>
+                    <input class="form-control" id="settlementDate" th:field="*{settlementDate}" readonly><br>
+                </div>
+                <div class="form-group">
+                    <div th:if="${roomer.moveOutDate != null}">
+                        <span class="span-format">Дата виселення</span>
+                        <input class="form-control" id="moveOutDate" th:field="*{moveOutDate}" readonly><br>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div th:unless="${message != null}">
+            <div th:object="${roomer}">
+                <div class="img_wrap">
+                    <img alt="This is photo" th:src="@{/img/denis.jpg}">
+                </div>
+                <div class="photo-note">
+                    <span th:text="${roomer.secondName}"></span>
+                    <span th:text="${roomer.firstName}"></span>
+                    <span th:text="${roomer.surname}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="footer :: footer"></div>
+<script src="https://use.fontawesome.com/4167c909a6.js"></script>
+</body>
+</html>

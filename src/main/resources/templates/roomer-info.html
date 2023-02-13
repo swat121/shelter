@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<div th:if="${message != null}">
+    <p th:text="${message}"></p>
+</div>
+<div class="container">
+    <div class="editForm">
+        <div class="leftButtonsAccept">
+            <a th:href="@{'./' +  ${roomer.id} + '/edit'}"><button type="button">Редагувати</button></a>
+            <a th:href="@{'./' +  ${roomer.id} + '/evict'}"><button type="button">Виселити</button></a>
+        </div>
+        <form id=showForm th:each="roomer:${roomer}">
+            <div class="form-group">
+                <span class="span-format">Дата народження</span>
+                <p class="form-control" id="dateOfBirth" th:text="${roomer.dateOfBirth}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Номер паспорта</span>
+                <p class="form-control" id="numberOfPassport" th:text="${roomer.numberOfPassport}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Ким виданий</span>
+                <p class="form-control" id="passportIssuedBy" th:text="${roomer.passportIssuedBy}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Номер телефону</span>
+                <p class="form-control" id="phoneNumber" th:text="${roomer.phoneNumber}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Звідки приїхали</span>
+                <p class="form-control" id="placeOfArrival" th:text="${roomer.placeOfArrival}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Номер кімнати</span>
+                <p class="form-control" id="roomNumber" th:text="${roomer.roomNumber}"></p>
+            </div>
+            <div class="form-group">
+                <span class="span-format">Дата поселення</span>
+                <p class="form-control" id="settlementDate" th:text="${roomer.settlementDate}"></p>
+            </div>
+            <div class="form-group">
+                <div th:if="${roomer.moveOutDate != null}">
+                    <span class="span-format">Дата виселення</span>
+                    <p class="form-control" id="moveOutDate" th:text="${roomer.moveOutDate}"></p>
+                </div>
+            </div>
+        </form>
+        <div th:object="${roomer}">
+            <div class="img_wrap">
+                <img alt="This is photo" th:src="@{/img/denis.jpg}">
+            </div>
+            <div class="photo-note">
+                <span th:text="${roomer.secondName}"></span>
+                <span th:text="${roomer.firstName}"></span>
+                <span th:text="${roomer.surname}"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="footer :: footer"></div>
+<script src="https://use.fontawesome.com/4167c909a6.js"></script>
+</body>
+</html>
