@@ -39,13 +39,13 @@
                 </div>
                 <div class="form-group">
                     <span class="span-format">Дата народження </span>
-                    <input class="form-control" id="dateOfBirth" th:field="*{dateOfBirth}" placeholder="02.02.2001"><br>
+                    <input class="form-control" type="date" id="dateOfBirth" th:field="*{dateOfBirth}" placeholder="02.02.2001"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('dateOfBirth')}"
                          th:errors="*{dateOfBirth}"></div>
                 </div>
                 <div class="form-group">
                     <span class="span-format">Номер паспорта  </span>
-                    <input class="form-control" type="number" id="numberOfPassport" th:field="*{numberOfPassport}"
+                    <input class="form-control" id="numberOfPassport" th:field="*{numberOfPassport}"
                            placeholder="000000000"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('numberOfPassport')}"
                          th:errors="*{numberOfPassport}"></div>
