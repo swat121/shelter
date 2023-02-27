@@ -10,10 +10,9 @@
 <div class="format">
     <div class="container">
         <div class="containerForm">
-
-
-            <div class="leftButton">
-                <button type="submit">Поселити</button>
+            <div class="rightButtons">
+                <a th:href="@{'/roomers'}">
+                    <button type="button">До списку</button></a>
             </div>
             <form id="saveForm" method="post" th:action="@{/roomers/add}" th:object="${roomer}">
                 <div class="form-group">
@@ -37,13 +36,13 @@
                 </div>
                 <div class="form-group">
                     <span class="span-format">Дата народження </span>
-                    <input class="form-control" id="dateOfBirth" th:field="*{dateOfBirth}" placeholder="02.02.2001"><br>
+                    <input class="form-control" type="date" id="dateOfBirth" th:field="*{dateOfBirth}" placeholder="02.02.2001"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('dateOfBirth')}"
                          th:errors="*{dateOfBirth}"></div>
                 </div>
                 <div class="form-group">
                     <span class="span-format">Номер паспорта  </span>
-                    <input class="form-control" type="number" id="numberOfPassport" th:field="*{numberOfPassport}"
+                    <input class="form-control" id="numberOfPassport" th:field="*{numberOfPassport}"
                            placeholder="000000000"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('numberOfPassport')}"
                          th:errors="*{numberOfPassport}"></div>
@@ -58,7 +57,7 @@
                 <div class="form-group">
                     <span class="span-format">Номер телефона  </span>
                     <input class="form-control" type="number" id="phoneNumber" th:field="*{phoneNumber}"
-                           placeholder="+380951420191"><br>
+                           placeholder="0951420191"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}"
                          th:errors="*{phoneNumber}"></div>
                 </div>
@@ -78,7 +77,10 @@
                         <p th:text="${message}"></p>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <span class="span-format">Нотатки</span>
+                    <input class="form-control" id="descriptions" th:field="*{descriptions}"><br>
+                </div>
             </form>
             <div class="rightButtons">
                 <button form="saveForm" type="submit">Зберегти</button>

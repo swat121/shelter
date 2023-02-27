@@ -44,4 +44,6 @@ public class Roomer {
 
     @Temporal(TemporalType.DATE)
     private Date moveOutDate;
+
+    private String descriptions;
 }
