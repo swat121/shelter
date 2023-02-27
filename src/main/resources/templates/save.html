@@ -10,10 +10,9 @@
 <div class="format">
     <div class="container">
         <div class="containerForm">
-
-
-            <div class="leftButton">
-                <button type="submit">Поселити</button>
+            <div class="rightButtons">
+                <a th:href="@{'/roomers'}">
+                    <button type="button">До списку</button></a>
             </div>
             <form id="saveForm" method="post" th:action="@{/roomers/add}" th:object="${roomer}">
                 <div class="form-group">

@@ -19,6 +19,8 @@
             <a th:href="@{'./' +  ${roomer.id} + '/evict'}">
                 <button type="button">Виселити</button>
             </a>
+            <a th:href="@{'/roomers'}">
+                <button type="button">До списку</button></a>
         </div>
         <form id=showForm th:each="roomer:${roomer}">
             <div class="form-group">

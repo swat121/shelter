@@ -14,6 +14,8 @@
     <div class="editForm">
         <div class="rightButtons">
             <button form="editForm" type="submit">Зберегти</button>
+            <a th:href="@{'/roomers'}">
+                <button type="button">До списку</button></a>
         </div>
         <div th:unless="${message != null}">
             <form id="editForm" method="post" action="#" th:object="${roomer}"
