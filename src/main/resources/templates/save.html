@@ -78,7 +78,10 @@
                         <p th:text="${message}"></p>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <span class="span-format">Нотатки</span>
+                    <input class="form-control" id="descriptions" th:field="*{descriptions}"><br>
+                </div>
             </form>
             <div class="rightButtons">
                 <button form="saveForm" type="submit">Зберегти</button>

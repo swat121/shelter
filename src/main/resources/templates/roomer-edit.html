@@ -68,7 +68,7 @@
                     <span class="span-format">Звідки приїхали</span>
                     <input class="form-control" id="placeOfArrival" th:field="*{placeOfArrival}"
                            placeholder="м. Дніпро"><br>
-                    <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}"
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('placeOfArrival')}"
                          th:errors="*{placeOfArrival}"></div>
                 </div>
                 <div class="form-group">
@@ -79,6 +79,10 @@
                     <div th:if="${errorNumber != null}">
                         <p th:text="${errorNumber}"></p>
                     </div>
+                </div>
+                <div class="form-group">
+                    <span class="span-format">Нотатки</span>
+                    <input class="form-control" id="descriptions" th:field="*{descriptions}"><br>
                 </div>
             </form>
             <form th:object="${roomer}">
