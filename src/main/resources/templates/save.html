@@ -49,14 +49,14 @@
                 </div>
                 <div class="form-group">
                     <span class="span-format">Ким видан       </span>
-                    <input class="form-control" type="number" id="passportIssuedBy" th:field="*{passportIssuedBy}"
+                    <input class="form-control" id="passportIssuedBy" th:field="*{passportIssuedBy}"
                            placeholder="1234"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('passportIssuedBy')}"
                          th:errors="*{passportIssuedBy}"></div>
                 </div>
                 <div class="form-group">
                     <span class="span-format">Номер телефона  </span>
-                    <input class="form-control" type="number" id="phoneNumber" th:field="*{phoneNumber}"
+                    <input class="form-control"  id="phoneNumber" th:field="*{phoneNumber}"
                            placeholder="0951420191"><br>
                     <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}"
                          th:errors="*{phoneNumber}"></div>
