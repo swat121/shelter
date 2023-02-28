@@ -27,8 +27,8 @@ public class Roomer {
     @NotBlank(message = "{NotEmpty.Roomer}")
     private String numberOfPassport;
 
-    @NotNull(message = "{NotNull.Roomer}")
-    private Integer passportIssuedBy;
+    @NotBlank(message = "{NotEmpty.Roomer}")
+    private String passportIssuedBy;
 
     @NotNull(message = "{NotEmpty.Roomer}")
     private String phoneNumber;
