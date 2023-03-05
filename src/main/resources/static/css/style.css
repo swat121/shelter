@@ -63,6 +63,12 @@ body{
     place-content:center space-between;
     align-items:center;
 }
+.containerRoom {
+    display:flex;
+    flex-direction:  column-reverse;
+    place-content:center space-between;
+    align-items:center;
+}
 .containerLogo {
     display: flex;
     place-content: center space-between;
@@ -401,4 +407,90 @@ body{
     margin: 18px 2px;
     border-radius: 10px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.rooms1{
+    box-sizing: border-box;
+    position: absolute;
+    width: 97px;
+    height: 58px;
+    left: 36%;
+    top: 38%;
+    background: #8B93A0;
+    border: 1px solid #000000;
+}
+
+.rooms2{
+    box-sizing: border-box;
+    position: absolute;
+    width: 97px;
+    height: 58px;;
+    left: 36%;
+    top: 50%;
+    background: #8B93A0;
+    border: 1px solid #000000;
+}
+.rooms3 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 97px;
+    height: 58px;;
+    left: 36%;
+    top: 62%;
+    background: #8B93A0;
+    border: 1px solid #000000;
+}
+.rooms4{
+    box-sizing: border-box;
+    position: absolute;
+    width: 97px;
+    height: 58px;;
+    left: 36%;
+    top: 74%;
+    background: #8B93A0;
+    border: 1px solid #000000;
+}
+.rooms5 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 97px;
+    height: 58px;;
+    left: 36%;
+    top: 86%;
+    background: #8B93A0;
+    border: 1px solid #000000;
+}
+.rooms6 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 97px;
+    height: 58px;;
+    left: 36%;
+    top: 98%;
+    background: #8B93A0;
+    border: 1px solid #000000;
+}
+.rooms17 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 81px;
+    height: 148px;
+    left: 960px;
+    top: 237px;
+
+    background: #8B93A0;
+    border: 1px solid #000000;
+}
+.rooms16 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 131px;
+    height: 149px;
+    left: 1052px;
+    top: 237px;
+
+    background: #8B93A0;
+    border: 1px solid #000000;
 }

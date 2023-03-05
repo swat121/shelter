@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>City</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<div th:each="roomers:${roomers}">
+    <a th:href="@{'/roomers/' +  ${roomers.id}}" id="note">
+        <span th:text="${roomers.secondName}"></span>
+        <span th:text="${roomers.firstName}"></span>
+        <span th:text="${roomers.surname}"></span>
+    </a>
+</div>
+<div th:insert="footer :: footer"></div>
+<script src="https://use.fontawesome.com/4167c909a6.js"></script>
+</body>
+</html>

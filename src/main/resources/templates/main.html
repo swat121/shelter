@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>City</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--GOOGLE FONTS-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:insert="header :: header"></div>
+<div class="container">
+    <div class="containerForm">
+        <div class="rightButtons">
+            <a th:href="@{'roomers/add'}"><button type="button">Поселити</button></a>
+            <a th:href="@{'/roomers'}">
+                <button type="button">Лист мешканців</button></a>
+            <a th:href="@{'/roomers'}">
+                <button type="button">Завантаженість</button></a>
+        </div>
+        <div class="containerRoom">
+            <a  th:href="@{'/room/1'}"><button class="rooms1" type="button">1</button></a>
+            <a  th:href="@{'/room/2'}"><button class="rooms2" type="button">1</button></a>
+            <a  th:href="@{'/room/3'}"><button class="rooms3" type="button">1</button></a>
+            <a  th:href="@{'/room/4'}"><button class="rooms4" type="button">1</button></a>
+            <a  th:href="@{'/room/5'}"><button class="rooms5" type="button">1</button></a>
+            <a  th:href="@{'/room/6'}"><button class="rooms6" type="button">1</button></a>
+            <a  th:href="@{'/room/17'}"><button class="rooms17" type="button">1</button></a>
+            <a  th:href="@{'/room/16'}"><button class="rooms16" type="button">1</button></a>
+        </div>
+        <div class="rightButtons">
+            <a th:href="@{'roomers/add'}"><button type="submit">Додати</button></a>
+        </div>
+    </div>
+</div>
+<div th:insert="footer :: footer"></div>
+<script src="https://use.fontawesome.com/4167c909a6.js"></script>
+</body>
+</html>
