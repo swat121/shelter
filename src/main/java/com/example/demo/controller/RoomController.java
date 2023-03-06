@@ -14,18 +14,18 @@ public class RoomController {
 
     private final RoomService roomService;
 
-    @GetMapping("/")
+    @GetMapping("/rooms")
     public String getRooms(Model model) {
-        return "main";
+        return "rooms";
     }
     @GetMapping("/rooms/{id}")
     public String getRoomById(Model model, @PathVariable(value = "id") int number) {
         model.addAttribute("roomers", roomService.getRoomersByRoom(number));
         return "room";
     }
-    @GetMapping("/load")
+    @GetMapping("/rooms/load")
     public String getLoadRooms(Model model) {
         model.addAttribute("rooms", roomService.getAllRooms());
-        return "main";
+        return "rooms";
     }
 }

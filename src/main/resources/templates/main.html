@@ -1,44 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
-  <meta charset="UTF-8">
-  <title>City</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>City</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!--GOOGLE FONTS-->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
-  <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <style>
+        .container{
+            max-width:1140px;
+            padding-right:15px;
+            padding-left:15px;
+            margin-right:auto;
+            margin-left:auto;
+        }
+        .rightButtons button:hover{
+            box-shadow: inset 0 -60px 0 #d9d9d9, 1px 2px 4px rgb(29, 59, 85);
+            color: #606a76;
+        }
+        .rightButtons button{
+            width: 170px;
+            color: white;
+            background-color: #0b4269;
+            border-radius: 30px;
+            padding: 10px;
+            margin-top: 25px;
+            font-size: 14px;
+            border-width: 2px;
+            cursor: pointer;
+            border-color: #1D3B55;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            transition: 0.4s ease-in-out;
+        }
+        .rightButtons{
+            flex-direction: column;
+            display: flex;
+            place-content: center space-between;
+            align-items:center;
+        }
+        .footer{
+            margin-top: 7%;
+            margin-bottom: 1%;
+            background: #d9d9d9;
+            padding:4px 0px;
+            font-family: 'Montserrat', sans-serif;
+            text-align:center;
+        }
+        .footerButtons{
+            display:flex;
+            flex-direction: row;
+        }
+
+        .footer .row{
+            width:100%;
+            margin:1% 0%;
+            padding:0.6% 0%;
+            color:gray;
+            font-size:0.8em;
+        }
+
+        .footer .row a{
+            text-decoration:none;
+            color: #606a76;
+            transition:0.5s;
+        }
+
+        .footer .row a:hover{
+            color: #0b4269;
+        }
+
+        .footer .row ul{
+            width:100%;
+        }
+
+        .footer .row ul li{
+            display:inline-block;
+            margin:0px 30px;
+        }
+
+        .footer .row a i{
+            font-size:2em;
+            margin:0% 1%;
+        }
+
+        @media (max-width:720px){
+            .footer{
+                text-align:left;
+                padding:5%;
+            }
+            .footer .row ul li{
+                display:block;
+                margin:10px 0px;
+                text-align:left;
+            }
+            .footer .row a i{
+                margin:0% 3%;
+            }
+        }
+    </style>
 </head>
 <body>
-<div th:insert="header :: header"></div>
 <div class="container">
-    <div class="containerForm">
-        <div class="rightButtons">
-            <a th:href="@{'roomers/add'}"><button type="button">Поселити</button></a>
-            <a th:href="@{'/roomers'}">
-                <button type="button">Лист мешканців</button></a>
-            <a th:href="@{'/roomers'}">
-                <button type="button">Завантаженість</button></a>
-        </div>
-        <div class="containerRoom">
-            <a  th:href="@{'/room/1'}"><button class="rooms1" type="button">1</button></a>
-            <a  th:href="@{'/room/2'}"><button class="rooms2" type="button">1</button></a>
-            <a  th:href="@{'/room/3'}"><button class="rooms3" type="button">1</button></a>
-            <a  th:href="@{'/room/4'}"><button class="rooms4" type="button">1</button></a>
-            <a  th:href="@{'/room/5'}"><button class="rooms5" type="button">1</button></a>
-            <a  th:href="@{'/room/6'}"><button class="rooms6" type="button">1</button></a>
-            <a  th:href="@{'/room/17'}"><button class="rooms17" type="button">1</button></a>
-            <a  th:href="@{'/room/16'}"><button class="rooms16" type="button">1</button></a>
-        </div>
-        <div class="rightButtons">
-            <a th:href="@{'roomers/add'}"><button type="submit">Додати</button></a>
-        </div>
+    <div class="rightButtons">
+        <a th:href="@{'/login'}">
+            <button type="button">Вхід</button>
+        </a>
     </div>
 </div>
 <div th:insert="footer :: footer"></div>
-<script src="https://use.fontawesome.com/4167c909a6.js"></script>
 </body>
 </html>
